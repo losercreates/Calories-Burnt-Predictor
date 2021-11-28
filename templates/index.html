@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Burnt Calories Predictor</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+    }
+    .header {
+      background-color: black;
+      display: grid;
+      place-items: center;
+    }
+    h1 {
+      color: white;
+      margin: 10px;
+      font-size: 8vh;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .body {
+      margin: 10px;
+      display: grid;
+      place-items: center;
+    }
+    span {
+      font-size: 20px;
+      color: black;
+      font-weight: bold;
+    }
+    .intitle {
+      display: grid;
+      place-items: center;
+      font-size: 5vh;
+      margin: 30px;
+    }
+    .btn {
+      display: block;
+      margin: 10px;
+      width: 200px;
+      height: 30px;
+      border-radius: 5px;
+      color: black;
+      background-color: #fff;
+      font-weight: bold;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      color: white;
+      background-color: black;
+    }
+    .input {
+      display: block;
+      height: 20px;
+      width: 300px;
+      margin-top: 4px;
+      margin-bottom: 4px;
+    }
+    label {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: small;
+      font-weight: bold;
+    }
+  </style>
+  <body>
+    <div class="header">
+      <h1>Burnt Calories Predictor</h1>
+    </div>
+    <div class="body">
+      <p class="intitle">Check how many calories you have burnt</p>
+      <form action="/" method="POST">
+        <label for="Gender">Gender: </label>
+        <input
+          type="number"
+          name="Gender"
+          placeholder="Enter 1 for female and 0 for male"
+          class="input"
+        />
+        <label for="Age">Age: </label>
+        <input
+          type="number"
+          name="Age"
+          placeholder="Enter your Age"
+          class="input"
+        />
+        <label for="Height">Height: </label>
+        <input
+          type="number"
+          name="Height"
+          placeholder="Enter your Height"
+          class="input"
+        />
+        <label for="Weight">Weight: </label>
+        <input
+          type="number"
+          name="Weight"
+          placeholder="Enter your Weight"
+          class="input"
+        />
+        <label for="Duration">Duration of Workout: </label>
+        <input
+          type="number"
+          name="Duration"
+          placeholder="Enter the duration of workout in minutes"
+          class="input"
+        />
+        <label for="Heart_Rate">Heart Rate: </label>
+        <input
+          type="number"
+          name="Heart_Rate"
+          placeholder="Enter your Heart Rate"
+          class="input"
+        />
+        <label for="Body_Temp">Body Tempertaure: </label>
+        <input
+          type="number"
+          name="Body_Temp"
+          placeholder="Enter your Body Tempertaure"
+          class="input"
+        />
+        <input class="btn" type="submit" />
+      </form>
+      {% if predicted_calories %}
+      <span>You have burnt </span>
+      <span> {{predicted_calories}} </span><span>calories</span>
+      {%endif%}
+    </div>
+  </body>
+</html>
